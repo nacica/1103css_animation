@@ -1,0 +1,107 @@
+// @use "mixin" as *;
+
+// body{
+//     margin: 0;
+// }
+
+// #container{
+//     position: relative;
+//     background-color: teal;
+//     height:100vh;
+// }
+
+// .animate-title{
+//     position: absolute;
+//     top:50%;
+//     left:50%;
+//     transform: translate(-50%,-50%);
+//     color: white;
+//     opacity: 0;
+
+//     &.inview{
+//         opacity: 1;
+
+//         & .char{
+//             display: inline-block;
+
+            // @include animation(
+            //     $name:kf-animation,
+            //     $duration:1.4s,
+            //     $timing-function:ease,
+            // );
+
+//             @for $i from 1 through 9{
+//                 &:nth-child(#{$i}){
+//                     animation-delay:$i*0.04s;
+//                 }
+//             }
+
+//             @keyframes kf-animation {
+//                 0%{
+//                     opacity: 0;
+//                     transform: translateY(-150%);
+//                 }
+//                 100%{
+//                     opacity: 1;
+//                     transform:translateY(0%);
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
+// <div id="container">
+// <div class="animate-title">
+//     <span class="char">a</span>
+
+@use "mixin"as*;
+
+#cotainer{
+    position: relative;
+    }
+
+.animate-title{
+    position:absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+
+    &.inview{
+        opacity: 1;
+
+            & .char{
+            display: inline-block;
+
+
+
+            @include animation(
+                $name:kf-animation,
+                $duration:1.4s,
+            );
+
+
+            @for $i from 1 through 9{
+                        &:nth-child(#{$i}){
+                            animation-delay: $i*0.5s;
+                        }
+            }
+
+            @keyframes kf-animation {
+                                0%{
+                                    opacity: 0;
+                                    transform: translateY(-150%);
+                                }
+                                100%{
+                                    opacity: 1;
+                                    transform: translateY(0%);
+
+                                }
+            }
+               
+            
+         }
+     }
+}
+
