@@ -1,3 +1,137 @@
+// <div id="container">
+// <div class="animate-title">
+//     <span class="char">a</span>
+
+// <button onclick="document.querySelector('.animate-title').classList.toggle('inview')">BUTTON</button>
+
+
+@use"mixin"as*;
+
+.animate-title{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+
+    &.inview{
+        opacity: 1;
+
+        
+        & .char{
+            display: inline-block;
+            @include animation(
+                $name:AAA,
+                $duration:1.3s
+                );
+            @for $i from 1 through 9{
+                &:nth-child(#{$i}){
+                    animation-delay:$i*0.5s ;
+                }
+            }
+         }
+    }
+}
+
+
+@keyframes AAA {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(100px);
+    }
+    
+}
+
+
+
+// @use "mixin"as*;
+
+// #container{
+//     position: relative;
+//     height:100vh;
+
+//     & .animate-title{
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%,-50%);
+//         opacity: 0;
+
+//         &.inview{
+//             opacity: 1;
+
+//             & .char{
+//                 display: inline-block;
+//                 @include animation(
+//                     $name:AAA,
+//                     $duration:1.4s,
+//                     );
+
+//                 @for $i from 1 through 9{
+//                     &:nth-child(#{$i}){
+//                         animation-delay: $i*0.05s;
+//                     }
+//                 }
+//          }
+//     }
+// }
+
+
+// }
+// @keyframes AAA {
+//     0%{
+//         transform: translateY(0);
+//     }
+//     100%{
+//         transform: translateY(100px);
+//     }
+    
+// }
+
+    
+//     & .animate-title{
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%,-50%);
+//         opacity: 0;
+//         &.inview{
+//               opacity: 1;
+            
+//              .char{
+//                  display: inline-block;
+//                     @include animation(
+//                                          $name:AAA,
+//                                          $duration:5.3s,
+//                                          );
+//                     @for $i from 1 through 9{
+//                         &:nth-child(#{$i}){
+//                             animation-delay: $i*0.2s;
+//                         }
+//                     };                     
+                                         
+//                 }
+//             }
+//      }
+                                
+                                
+// }
+
+// @keyframes AAA {
+//     0%{
+//         transform: translateY(0);
+//     }
+//     100%{
+//         transform: translateY(100px);
+//     }
+    
+// }
+
+
+
+
 // @use "mixin" as *;
 
 // body{
@@ -55,53 +189,53 @@
 // <div class="animate-title">
 //     <span class="char">a</span>
 
-@use "mixin"as*;
+// @use "mixin"as*;
 
-#cotainer{
-    position: relative;
-    }
+// #cotainer{
+//     position: relative;
+//     }
 
-.animate-title{
-    position:absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    opacity: 0;
+// .animate-title{
+//     position:absolute;
+//     top:50%;
+//     left: 50%;
+//     transform: translate(-50%,-50%);
+//     opacity: 0;
 
-    &.inview{
-        opacity: 1;
+//     &.inview{
+//         opacity: 1;
 
-            & .char{
-            display: inline-block;
-
-
-
-            @include animation(
-                $name:kf-animation,
-                $duration:1.4s,
-            );
+//             & .char{
+//             display: inline-block;
 
 
-            @for $i from 1 through 9{
-                        &:nth-child(#{$i}){
-                            animation-delay: $i*0.5s;
-                        }
-            }
 
-            @keyframes kf-animation {
-                                0%{
-                                    opacity: 0;
-                                    transform: translateY(-150%);
-                                }
-                                100%{
-                                    opacity: 1;
-                                    transform: translateY(0%);
+//             @include animation(
+//                 $name:kf-animation,
+//                 $duration:1.4s,
+//             );
 
-                                }
-            }
+
+//             @for $i from 1 through 9{
+//                         &:nth-child(#{$i}){
+//                             animation-delay: $i*0.5s;
+//                         }
+//             }
+
+//             @keyframes kf-animation {
+//                                 0%{
+//                                     opacity: 0;
+//                                     transform: translateY(-150%);
+//                                 }
+//                                 100%{
+//                                     opacity: 1;
+//                                     transform: translateY(0%);
+
+//                                 }
+//             }
                
             
-         }
-     }
-}
+//          }
+//      }
+// }
 

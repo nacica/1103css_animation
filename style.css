@@ -1,7 +1,3 @@
-#cotainer {
-  position: relative;
-}
-
 .animate-title {
   position: absolute;
   top: 50%;
@@ -14,8 +10,8 @@
 }
 .animate-title.inview .char {
   display: inline-block;
-  animation-name: kf-animation;
-  animation-duration: 1.4s;
+  animation-name: AAA;
+  animation-duration: 1.3s;
   animation-timing-function: ease;
   animation-delay: 0s;
   animation-iteration-count: 1;
@@ -49,13 +45,12 @@
 .animate-title.inview .char:nth-child(9) {
   animation-delay: 4.5s;
 }
-@keyframes kf-animation {
+
+@keyframes AAA {
   0% {
-    opacity: 0;
-    transform: translateY(-150%);
+    transform: translateY(0);
   }
   100% {
-    opacity: 1;
-    transform: translateY(0%);
+    transform: translateY(100px);
   }
 }/*# sourceMappingURL=style.css.map */
