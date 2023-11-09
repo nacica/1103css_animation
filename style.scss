@@ -2,47 +2,176 @@
 // <div class="animate-title">
 //     <span class="char">a</span>
 
-// <button onclick="document.querySelector('.animate-title').classList.toggle('inview')">BUTTON</button>
+// <button onclick="querySelector('.animate-title').toggle('inview')">
 
 
 @use"mixin"as*;
 
+
+
+// 1109　830開始
+
 .animate-title{
     position: absolute;
     top:50%;
-    left:50%;
+    left:50% ;
     transform: translate(-50%,-50%);
-    opacity: 0;
 
     &.inview{
-        opacity: 1;
-
         
         & .char{
+            transform: translate(-50%,-400%);
+            transition: all 2.4s ease;
             display: inline-block;
-            @include animation(
-                $name:AAA,
-                $duration:1.3s
-                );
             @for $i from 1 through 9{
                 &:nth-child(#{$i}){
-                    animation-delay:$i*0.5s ;
+                    transition-delay: $i*0.5s;
                 }
             }
-         }
+       };
     }
 }
 
 
-@keyframes AAA {
-    0%{
-        transform: translateY(0);
-    }
-    100%{
-        transform: translateY(100px);
-    }
+
+
+
+// @include animation(
+//       $name:AAA,
+//       $duration:1.2s,
+//      );
     
-}
+    
+    
+    
+    
+    
+    // @keyframes AAA {
+    //     0%{
+    //         transform: translate(-50%,-50%);
+    //     }
+    //     100%{
+    //         transform: translate(-50%,100%);
+    //     }
+        
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 1108 1344開始　1413完了
+
+// .animate-title{
+//     position: absolute;
+//     top:50%;
+//     left:50%;
+//     transform: translate(-50%,-50%);
+    
+//     &.inview{
+//         .char{
+//             transition: all 1.0s ease;
+//             display: inline-block;
+//             transform: translate(-50%,100%);
+            
+//             @for $i from 1 through 9{
+//                 &:nth-child(#{$i}){
+//                     transition-delay:$i*0.1s ;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .animate-title{
+//     position: absolute;
+//     top:50%;
+//     left:50%;
+//     transform: translate(-50%,-50%);
+//     opacity: 0;
+
+//     &.inview{
+//         opacity: 1;
+
+        
+//         & .char{
+//             display: inline-block;
+//             @include animation(
+//                 $name:AAA,
+//                 $duration:1.3s
+//                 );
+//             @for $i from 1 through 9{
+//                 &:nth-child(#{$i}){
+//                     animation-delay:$i*0.5s ;
+//                 }
+//             }
+//          }
+//     }
+// }
+
+
+// @keyframes AAA {
+//     0%{
+//         transform: translateY(0);
+//     }
+//     100%{
+//         transform: translateY(100px);
+//     }
+    
+// }
 
 
 
